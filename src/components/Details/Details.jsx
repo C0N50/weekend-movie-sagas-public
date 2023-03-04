@@ -19,7 +19,6 @@ function Details() {
     return (
         <>
         <h2 className='details-header'>Details:</h2>
-        <button onClick={handleGoToMovieList}>Back To List</button>
 
         <section className="details">
                 {movieDescription?.map(description => {
