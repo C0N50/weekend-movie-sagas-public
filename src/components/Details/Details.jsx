@@ -2,16 +2,15 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieItem from '../MovieItem/MovieItem';
 import { useHistory } from "react-router-dom";
+import './Details.css'
 
 function Details() {
 
     const movieDetails = useSelector(store => store.details)
     const history = useHistory();
     
-
     const movieDescription = movieDetails?.description;
     const movieGenres = movieDetails?.genres;
-
 
     const handleGoToMovieList = () => {
         history.push("/");
@@ -19,7 +18,7 @@ function Details() {
 
     return (
         <>
-        <h2>Details:</h2>
+        <h2 className='details-header'>Details:</h2>
         <button onClick={handleGoToMovieList}>Back To List</button>
 
         <section className="details">
