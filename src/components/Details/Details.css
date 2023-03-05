@@ -7,4 +7,47 @@
 .details {
     color: white;
     font-family: Helvetica, Arial, sans-serif;
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+}
+
+/* .grid-title-card {
+    grid-column: 2/3;
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    width: 100%;
+    background-color: red;
+    border-radius: 5px;
+    justify-self: center;
+} */
+
+.grid-image {
+    grid-column: 1/2;
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    background-color: red;
+    border-radius: 5px;
+    justify-self: center;
+    display: flex;
+    flex-flow: column wrap;
+
+}
+
+.grid-description {
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+    text-align: left;
+    padding: 2%;
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    background-color: red;
+    border-radius: 5px;
+}
+
+
+
+.image-style {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }

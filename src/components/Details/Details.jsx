@@ -8,38 +8,34 @@ function Details() {
 
     const movieDetails = useSelector(store => store.details)
     const history = useHistory();
-    
+
     const movieDescription = movieDetails?.description;
     const movieGenres = movieDetails?.genres;
 
-    const handleGoToMovieList = () => {
-        history.push("/");
-    }
-
     return (
         <>
-        <h2 className='details-header'>Details:</h2>
+            {movieDescription?.map(description => {
+                return (
+                    <div key={description.title} className="details" >
+                        {/* <div className="grid-title-card"></div> */}
+                        <div className="grid-image">
+                            <img className='image-style' src={description.poster} alt={description.title} />
+                            <div><h3>{description.title}</h3></div>
+                            <div>
+                                {movieGenres?.map(genre => {
+                                    return (
+                                        <div key={genre.id}>{genre.name}</div>
+                                    )
+                                })}</div>
+                        </div>
 
-        <section className="details">
-                {movieDescription?.map(description => {
-                    return (
-                        <div key={description.title} >
-                        <h3>{description.title}</h3>
-                        <img src={description.poster} alt={description.title} />
-                        <h3>Description:</h3>
-                        <div>{description.description}</div>
-                        <h3>Genres:</h3>
-                        {movieGenres?.map(genre => {
-                            return (
-                            <div key={genre.id}>{genre.name}</div>
-                            )
-                        })}
+
+                        <div className="grid-description">{description.description}</div>
+
+
                     </div>
-                    );
-                })}
-            </section>
-
-
+                );
+            })}
         </>
     )
 
