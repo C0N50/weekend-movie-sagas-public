@@ -9,8 +9,6 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 
-  console.log(req.params.id)
-
   const queryParams = [
     req.params.id // comes from url
   ];
@@ -32,7 +30,6 @@ router.get('/:id', (req, res) => {
       console.log('ERROR: Get all movies', err);
       res.sendStatus(500)
     })
-
 });
 
 

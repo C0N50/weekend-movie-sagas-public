@@ -19,8 +19,6 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 
-  console.log(req.params.id)
-
   const queryParams = [
     req.params.id // comes from url
   ];
@@ -32,8 +30,6 @@ router.get('/:id', (req, res) => {
   WHERE movies.id = $1
   GROUP BY movies.title, movies.poster, movies.description;
   `;
-
-
 
   pool.query(queryText, queryParams)
     .then(result => {
