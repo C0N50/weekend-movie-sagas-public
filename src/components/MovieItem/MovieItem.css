@@ -1,3 +1,8 @@
+/*
+* MovieItem compnent is a "card" that contains an image and a "container" for text.
+* The container is a small flex
+*/
+
 .movie-card {
     box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
     transition: 0.3s;
@@ -5,7 +10,7 @@
     background-color: red;
     border-radius: 5px;
     cursor: pointer;
-
+    
 }
 
 .movie-card:hover {

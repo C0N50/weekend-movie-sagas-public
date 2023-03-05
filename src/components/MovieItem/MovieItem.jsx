@@ -4,10 +4,12 @@ import '../MovieList/MovieList.css'
 import { useHistory } from "react-router-dom";
 import "./MovieItem.css"
 
-
+/**
+ * @param {object} movie - prop sent from @MovieList component
+ * @returns a single @MovieItem card containing image and title of movie. 
+ * @MovieItem cards rout to details page on click
+ */
 function MovieItem({ movie }) {
-
-    const movieDetails = useSelector(store => store.details)
 
     const dispatch = useDispatch();
     const history = useHistory();

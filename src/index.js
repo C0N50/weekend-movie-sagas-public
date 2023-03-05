@@ -11,14 +11,21 @@ import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
-// Create the rootSaga generator function
+/**
+ *  Creates the rootSaga generator function
+ */
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
 }
 
+
+/**
+ * Fetches all movies from the DB to be displayed on MovieList component.
+ * Calls axios get on movie endpoint to request movie list from server.
+ * Sets movies array reducer with received movieList array.
+ */
 function* fetchAllMovies() {
-    // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie');
         yield put({ type: 'SET_MOVIES', payload: movies.data });
@@ -26,30 +33,32 @@ function* fetchAllMovies() {
     } catch {
         console.log('get all error');
     }
+}
+/**
+ * Fetches a description of a single movie from the sever/DB based on the movies @id 
+ * The @id is provided by the @MovieItem component.
+ * @param {object} action - object received from dispatch containing fields: @type, @payload 
+ * @type can either equal @ADD_DESCRIPTION or @ADD_GENRES each pertains to idividual put calls to seperate reducers.
+ * @payload is the id of the movie
+ */
+function* fetchDetails(action) {
+    try {
+        const description = yield axios.get(`/api/movie/${action.payload}`);
+        yield put({ type: 'ADD_DESCRIPTION', payload: description.data });
 
+        const genres = yield axios.get(`/api/genre/${action.payload}`);
+        yield put({ type: 'ADD_GENRES', payload: genres.data });
+
+    } catch {
+        console.log('get details error');
+    }
 }
 
-function* fetchDetails (action) {
-    // get details on selected movie
-        // get all movies from the DB
 
-        try {
-            const description = yield axios.get(`/api/movie/${action.payload}`);
-            yield put({ type: 'ADD_DESCRIPTION', payload: description.data });
-
-            const genres = yield axios.get(`/api/genre/${action.payload}`);
-            yield put({ type: 'ADD_GENRES', payload: genres.data });
-    
-        } catch {
-            console.log('get details error');
-        }
-}
-
-
-// Create sagaMiddleware
+// Creates sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
-// Used to store movies returned from the server
+// Reducer used to store movies returned from the server
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
@@ -59,7 +68,7 @@ const movies = (state = [], action) => {
     }
 }
 
-// Used to store the movie genres
+//Reducer used to store the movie genres
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
@@ -69,12 +78,17 @@ const genres = (state = [], action) => {
     }
 }
 
+/**
+ * Reducer used to store details. Contains two distice @fields
+ * @description - Array containing single description object
+ * @genres - Array containing multiple genre objects
+ */
 const details = (state = {}, action) => {
     switch (action.type) {
         case 'ADD_DESCRIPTION':
-            return { ...state, description : action.payload};
+            return { ...state, description: action.payload };
         case 'ADD_GENRES':
-            return { ...state, genres : action.payload};
+            return { ...state, genres: action.payload };
         default:
             return state;
     }
