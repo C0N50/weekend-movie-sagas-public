@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import MovieItem from '../MovieItem/MovieItem';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import './Details.css'
 
