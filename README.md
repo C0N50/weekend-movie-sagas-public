@@ -1,9 +1,9 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+CONFLIX - The Stylized Movie List
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Conflix is a simple Movie List app that displays movies as buttons. The user can click the movie buttons to see a brief description of the movie and its genres. Movie Data is stored in a database and is persistent. The ability for users to add movies to the movie list via form is in development and will be added soon.
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
