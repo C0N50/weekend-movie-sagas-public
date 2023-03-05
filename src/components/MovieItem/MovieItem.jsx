@@ -21,7 +21,7 @@ function MovieItem({ movie }) {
     }
 
     return (
-        <div className="movie-card" key={movie.id} >
+        <div className="movie-card">
             <img className='image-button' width='100%' onClick={handleGoToMovieView} src={movie.poster} alt={movie.title} />
             <div className="container">
             <h3>{movie.title}</h3>
