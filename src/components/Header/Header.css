@@ -1,6 +1,5 @@
 .title {
     padding: 1%;
-  
     color: white;
     font-family: Helvetica, Arial, sans-serif;
     background-color: red;
@@ -10,7 +9,12 @@
     font-size: 4em; 
     box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
     transition: 0.3s;
-  
     background-color: red;
     cursor: pointer;
+    border: 1px white solid;
+  }
+
+
+  .title:hover {
+    box-shadow: 0 10px 16px 0 rgb(255, 255, 255);
   }

@@ -8,12 +8,9 @@ html {
   margin-right:15%;
 }
 
-
-
-.title:hover {
+/* .title:hover {
   box-shadow: 0 10px 16px 0 rgb(255, 255, 255);
-}
-
+} */
 
 .App-header {
   background-color: #222;
