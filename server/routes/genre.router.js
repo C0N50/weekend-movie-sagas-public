@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
   JOIN movies_genres ON genres.id = movies_genres.genre_id
   JOIN movies ON movies.id = movies_genres.movie_id
   WHERE movies.id = $1
-  GROUP BY genres.id, genres.name;;
+  GROUP BY genres.id, genres.name;
   `;
 
   pool.query(queryText, queryParams)

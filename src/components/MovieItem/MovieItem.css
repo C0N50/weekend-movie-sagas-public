@@ -4,6 +4,7 @@
     width: 15%;
     background-color: red;
     border-radius: 5px;
+    cursor: pointer;
 
 }
 
@@ -12,14 +13,19 @@
 }
 
 .container {
-    padding: 2px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 2%;
     font-size: 1em;
     font-family: Helvetica, sans-serif;
     color: whitesmoke;
+    cursor: pointer;
 }
 
 .image-button {
     cursor: pointer;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    height : 75%;
 }
