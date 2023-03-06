@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
 
 });
 
-
 router.get('/:id', (req, res) => {
 
   const queryParams = [
@@ -42,8 +41,6 @@ router.get('/:id', (req, res) => {
     })
 
 });
-
-
 
 router.post('/', (req, res) => {
   console.log(req.body);
