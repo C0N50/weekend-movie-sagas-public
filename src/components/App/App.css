@@ -1,0 +1,36 @@
+html {
+  background-color: rgb(42, 42, 42);
+}
+
+.App {
+  text-align: center;
+  margin-left: 15%;
+  margin-right:15%;
+}
+
+/* .title:hover {
+  box-shadow: 0 10px 16px 0 rgb(255, 255, 255);
+} */
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+}
+
+.App-title {
+  font-size: 1.5em;
+  font-family: Helvetica, Arial, sans-serif;
+  color: whitesmoke;
+}
+
+.App-intro {
+  font-size: large;
+  color: whitesmoke;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
