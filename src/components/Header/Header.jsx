@@ -14,10 +14,15 @@ function Header() {
         history.push("/");
     }
 
+    const handleGoToMovieForm = () => {
+        history.push("/form")
+    }
+
     return (
-        <>
+        <div className='header-nav'>
             <h1 onClick={handleGoToMovieList} className="title">CONFLIX</h1>
-        </>
+            <h2 className='add-movie' onClick={handleGoToMovieForm}>Add Movie</h2>
+        </div>
     )
 }
 
