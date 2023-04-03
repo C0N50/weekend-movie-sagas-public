@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
   const insertMovieQuery = `
   INSERT INTO "movies" ("title", "poster", "description")
   VALUES ($1, $2, $3)
-  RETURNING "id";`
+  // RETURNING "id";`
 
   // FIRST QUERY MAKES MOVIE
   pool.query(insertMovieQuery, [req.body.title, req.body.poster, req.body.description])
